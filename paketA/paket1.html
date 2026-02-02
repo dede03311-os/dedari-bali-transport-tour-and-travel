@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Paket Wisata Bali 4D3N - Dedari Bali</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #0066cc;
+      --secondary-color: #ff6b35;
+      --gold-color: #d4af37;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .navbar-brand img {
+      height: 70px;
+      width: auto;
+      transition: transform 0.3s ease;
+      filter: brightness(1.1);
+    }
+    
+    .navbar-brand img:hover {
+      transform: scale(1.05);
+    }
+    
+    .hero-package {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                  url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&h=800&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+    }
+    
+    .hero-package h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+    }
+    
+    .hero-package .badge {
+      font-size: 1rem;
+      padding: 10px 20px;
+      background: var(--secondary-color);
+    }
+    
+    .price-box {
+      background: linear-gradient(135deg, var(--gold-color), #b8941f);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 100px;
+    }
+    
+    .price-box h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .price-box p {
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+    
+    .btn-book-now {
+      background: white;
+      color: var(--gold-color);
+      border: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-book-now:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      color: var(--gold-color);
+    }
+    
+    .content-section {
+      padding: 60px 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #333;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--gold-color);
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: start;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-item:hover {
+      background: #e9ecef;
+      transform: translateX(5px);
+    }
+    
+    .feature-icon {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      min-width: 30px;
+    }
+    
+    .itinerary-day {
+      background: white;
+      border-left: 4px solid var(--gold-color);
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .itinerary-day:hover {
+      box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+    }
+    
+    .itinerary-day h4 {
+      color: var(--gold-color);
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    .itinerary-day ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    .itinerary-day li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      aspect-ratio: 1;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    
+    .include-exclude {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .include-exclude h5 {
+      color: var(--gold-color);
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    .include-exclude ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    .include-exclude li {
+      padding: 8px 0;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    .include-exclude li:before {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .include-exclude.includes li:before {
+      content: "✓ ";
+      color: #28a745;
+    }
+    
+    .include-exclude.excludes li:before {
+      content: "✗ ";
+      color: #dc3545;
+    }
+    
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+      color: white;
+    }
+    
+    .footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 40px 0 20px;
+    }
+    
+    .footer h5 {
+      color: var(--gold-color);
+      margin-bottom: 20px;
+    }
+    
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer a:hover {
+      color: var(--gold-color);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.php">
+      <img src="image/logo.png" alt="Dedari Bali Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php#paket">Paket Wisata</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php#kontak">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-package">
+  <div class="container">
+    <span class="badge mb-3">⭐ PAKET POPULER</span>
+    <h1>Paket Wisata Bali</h1>
+    <p class="lead">4 Hari 3 Malam - Pengalaman Tak Terlupakan di Pulau Dewata</p>
+  </div>
+</section>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/6282236645486?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Wisata%20Bali%204D3N" class="whatsapp-float" target="_blank" title="Chat WhatsApp">
+  💬
+</a>
+
+<!-- Content Section -->
+<section class="content-section">
+  <div class="container">
+     <a class="navbar-brand" href="#">
+      <img src="image/logo.png" alt="Dedari Bali Logo">
+    </a>
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Deskripsi -->
+        <div class="mb-5">
+          <h2 class="section-title">Tentang Paket Ini</h2>
+          <p class="lead">Nikmati pengalaman liburan yang tak terlupakan di Pulau Dewata dengan paket wisata Bali 4 hari 3 malam. Kunjungi tempat-tempat ikonik seperti Tanah Lot, Uluwatu, dan berbagai destinasi menarik lainnya.</p>
+          <p>Paket ini dirancang khusus untuk memberikan Anda pengalaman terbaik menjelajahi keindahan alam, budaya, dan kuliner Bali. Dengan pemandu wisata profesional dan transportasi nyaman, liburan Anda akan menjadi kenangan indah yang tak terlupakan.</p>
+        </div>
+
+        <!-- Itinerary -->
+        <div class="mb-5">
+          <h2 class="section-title">Itinerary Perjalanan</h2>
+          
+          <div class="itinerary-day">
+            <h4>🌅 Hari 1 - Kedatangan & Kuta Beach</h4>
+            <ul>
+              <li>Penjemputan di Bandara Ngurah Rai</li>
+              <li>Check-in hotel dan istirahat sejenak</li>
+              <li>Mengunjungi Pantai Kuta untuk menikmati sunset</li>
+              <li>Makan malam di restoran lokal</li>
+              <li>Kembali ke hotel untuk istirahat</li>
+            </ul>
+          </div>
+
+          <div class="itinerary-day">
+            <h4>🏖️ Hari 2 - Pantai Selatan Bali</h4>
+            <ul>
+              <li>Sarapan pagi di hotel</li>
+              <li>Mengunjungi Pantai Pandawa</li>
+              <li>Eksplorasi Pantai Melasti yang eksotis</li>
+              <li>Makan siang di restoran seafood</li>
+              <li>Mengunjungi Pura Uluwatu dan menonton Tari Kecak</li>
+              <li>Makan malam di Jimbaran Bay</li>
+            </ul>
+          </div>
+
+          <div class="itinerary-day">
+            <h4>🏔️ Hari 3 - Bedugul & Tanah Lot</h4>
+            <ul>
+              <li>Sarapan pagi di hotel</li>
+              <li>Mengunjungi Pura Ulun Danu Beratan di Bedugul</li>
+              <li>Berfoto di Candi Bentar yang ikonik</li>
+              <li>Makan siang di restoran dengan view danau</li>
+              <li>Mengunjungi Kebun Raya Bedugul</li>
+              <li>Sunset di Tanah Lot</li>
+              <li>Kembali ke hotel</li>
+            </ul>
+          </div>
+
+          <div class="itinerary-day">
+            <h4>🛫 Hari 4 - Belanja & Kepulangan</h4>
+            <ul>
+              <li>Sarapan pagi di hotel & check-out</li>
+              <li>Belanja oleh-oleh di Pasar Seni Sukawati</li>
+              <li>Makan siang di restoran lokal</li>
+              <li>Transfer ke Bandara Ngurah Rai</li>
+              <li>Perjalanan pulang dengan kenangan indah</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Include/Exclude -->
+        <div class="mb-5">
+          <h2 class="section-title">Yang Termasuk & Tidak Termasuk</h2>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="include-exclude includes">
+                <h5>✓ Sudah Termasuk</h5>
+                <ul>
+                  <li>Hotel bintang 3/4 (3 malam)</li>
+                  <li>Transportasi AC selama tour</li>
+                  <li>Sopir merangkap tour guide</li>
+                  <li>Bensin & parkir</li>
+                  <li>Tiket masuk objek wisata</li>
+                  <li>Makan 3x sehari</li>
+                  <li>Air mineral selama tour</li>
+                  <li>Asuransi perjalanan</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="include-exclude excludes">
+                <h5>✗ Tidak Termasuk</h5>
+                <ul>
+                  <li>Tiket pesawat PP</li>
+                  <li>Pengeluaran pribadi</li>
+                  <li>Tip guide/sopir (optional)</li>
+                  <li>Aktivitas tambahan</li>
+                  <li>Asuransi perjalanan pribadi</li>
+                  <li>Biaya tambahan di luar itinerary</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="mb-5">
+          <h2 class="section-title">Fasilitas Paket</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="feature-item">
+                <span class="feature-icon">🏨</span>
+                <div>
+                  <strong>Hotel Nyaman</strong>
+                  <p class="mb-0 text-muted">Hotel bintang 3/4 dengan fasilitas lengkap</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🚐</span>
+                <div>
+                  <strong>Transportasi AC</strong>
+                  <p class="mb-0 text-muted">Kendaraan nyaman dengan AC selama tour</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">👨‍💼</span>
+                <div>
+                  <strong>Tour Guide</strong>
+                  <p class="mb-0 text-muted">Pemandu wisata berpengalaman dan ramah</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature-item">
+                <span class="feature-icon">🍽️</span>
+                <div>
+                  <strong>Makan 3x Sehari</strong>
+                  <p class="mb-0 text-muted">Hidangan lokal dan internasional</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🎫</span>
+                <div>
+                  <strong>Tiket Masuk</strong>
+                  <p class="mb-0 text-muted">Semua tiket objek wisata sudah termasuk</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">📸</span>
+                <div>
+                  <strong>Dokumentasi</strong>
+                  <p class="mb-0 text-muted">Foto gratis di beberapa spot pilihan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="mb-5">
+          <h2 class="section-title">Galeri Destinasi</h2>
+          <div class="gallery-grid">
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&h=500&fit=crop')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=500&fit=crop')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=500&h=500&fit=crop')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1532186651327-6ac23687d189?w=500&h=500&fit=crop')"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Price Box -->
+      <div class="col-lg-4">
+        <div class="price-box">
+          <p class="mb-2">Mulai Dari</p>
+          <h2>Rp 3.500.000</h2>
+          <p>per orang</p>
+          <hr style="border-color: rgba(255,255,255,0.3);">
+          <p class="mb-3"><small>✓ 4 Hari 3 Malam<br>✓ All Inclusive<br>✓ Min. 2 Orang</small></p>
+          <a href="https://wa.me/6282236645486?text=Halo,%20saya%20ingin%20booking%20Paket%20Wisata%20Bali%204D3N" class="btn-book-now" target="_blank">
+            💬 Booking Sekarang
+          </a>
+          <p class="mt-3 mb-0"><small>Atau hubungi kami via WhatsApp</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>Dedari Bali Transport</h5>
+        <p>Travel & tour terpercaya untuk liburan impian Anda di Pulau Dewata.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Kontak Kami</h5>
+        <p>📞 +62 822-3664-5486<br>
+        📧 dedaribali@gmail.com<br>
+        📍 Bali, Indonesia</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Link Cepat</h5>
+        <p>
+          <a href="index.php">Beranda</a><br>
+          <a href="index.php">Paket Wisata</a><br>
+          <a href="tentang-kami.html">Tentang Kami</a><br>
+          <a href="index.php#kontak">Kontak</a>
+        </p>
+      </div>
+    </div>
+    <hr style="border-color: #444;">
+    <div class="text-center pt-3">
+      <p>&copy; 2025 Dedari Bali Transport. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

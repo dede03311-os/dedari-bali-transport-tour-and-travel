@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referensi Desain Paket Wisata</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #ff6b35;
+            --gold-color: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        .design-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        /* DESAIN 1: Gradient Overlay dengan Icon */
+        .package-v1 {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+        }
+
+        .package-v1:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .package-v1 .img-wrapper {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-v1 .img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.8) 0%, rgba(0,102,204,0.6) 100%);
+            z-index: 1;
+            transition: opacity 0.4s;
+        }
+
+        .package-v1:hover .img-wrapper::before {
+            opacity: 0.5;
+        }
+
+        .package-v1 .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .package-v1:hover .img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .package-v1 .icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            font-size: 80px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+
+        .package-v1 .badge-corner {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+        }
+
+        /* DESAIN 2: Split Design dengan Info Highlight */
+        .package-v2 {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            background: white;
+        }
+
+        .package-v2:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .package-v2 .img-section {
+            height: 280px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .package-v2 .img-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+
+        .package-v2 .package-count {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            z-index: 2;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .package-v2 .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .package-v2 .info-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .package-v2 .info-item .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        /* DESAIN 3: Card dengan Ribbon dan Animated Button */
+        .package-v3 {
+            border-radius: 25px;
+            overflow: visible;
+            position: relative;
+            background: white;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .package-v3:hover {
+            transform: translateY(-20px) rotate(1deg);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+
+        .package-v3 .ribbon {
+            position: absolute;
+            top: -10px;
+            right: 30px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 25px;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 5px 20px rgba(255,107,53,0.5);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+        }
+
+        .package-v3 .img-area {
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 25px 25px 0 0;
+            position: relative;
+        }
+
+        .package-v3 .overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .package-v3 .btn-explore {
+            background: linear-gradient(135deg, var(--gold-color) 0%, #b8941f 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .package-v3 .btn-explore::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .package-v3 .btn-explore:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .package-v3 .btn-explore:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(212,175,55,0.4);
+        }
+
+        /* DESAIN 4: Modern Minimalist dengan Accent Border */
+        .package-v4 {
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+        }
+
+        .package-v4::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, var(--gold-color), var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .package-v4:hover::before {
+            opacity: 1;
+        }
+
+        .package-v4:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+        }
+
+        .package-v4 .img-container {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .package-v4 .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: grayscale(20%);
+        }
+
+        .package-v4:hover .img-container img {
+            transform: scale(1.15);
+            filter: grayscale(0%);
+        }
+
+        .package-v4 .content-area {
+            padding: 30px;
+        }
+
+        .package-v4 .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .package-v4 .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .package-v4 .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* General Styles */
+        .btn-custom {
+            background: var(--gold-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            background: #b8941f;
+            transform: scale(1.05);
+            color: white;
+            box-shadow: 0 5px 20px rgba(212,175,55,0.4);
+        }
+
+        .design-label {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- DESAIN 1 -->
+        <div class="design-section">
+            <div class="text-center">
+                <span class="design-label">DESAIN 1: Gradient Overlay dengan Icon</span>
+            </div>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="package-v1">
+                        <span class="badge-corner">⭐ POPULER</span>
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=800" alt="Bali Tour">
+                            <div class="icon-overlay">🏝️</div>
+                        </div>
+                        <div class="card-body p-4 bg-white">
+                            <h3 class="fw-bold mb-3">PAKET TOUR BERHARI-HARI</h3>
+                            <p class="text-muted mb-3">10 Pilihan Paket Wisata Terlengkap</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span>📅 2-5 Hari</span>
+                                <span>👥 Min. 2 Orang</span>
+                            </div>
+                            <a href="#" class="btn-custom w-100 text-center">Lihat Paket Lengkap</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="package-v1">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800" alt="GWK">
+                            <div class="icon-overlay">🗿</div>
+                        </div>
+                        <div class="card-body p-4 bg-white">
+                            <h3 class="fw-bold mb-3">PAKET WISATA GWK</h3>
+                            <p class="text-muted mb-3">Garuda Wisnu Kencana Cultural Park</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span>⏱️ Full Day</span>
+                                <span>🎭 Cultural</span>
+                            </div>
+                            <a href="#" class="btn-custom w-100 text-center">Jelajahi Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESAIN 2 -->
+        <div class="design-section">
+            <div class="text-center">
+                <span class="design-label">DESAIN 2: Split Design dengan Info Highlight</span>
+            </div>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="package-v2">
+                        <div class="img-section" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=800');">
+                            <span class="badge-corner" style="top: 15px; left: 15px;">⭐ TERLARIS</span>
+                            <div class="package-count">📦 10 Paket Tersedia</div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="fw-bold mb-2">Tour Berhari-hari</h3>
+                            <p class="text-muted small mb-3">Eksplorasi Bali dengan berbagai pilihan durasi</p>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="icon">⏰</div>
+                                <small>2-5 Hari</small>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon">🚗</div>
+                                <small>Transport</small>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon">🏨</div>
+                                <small>Hotel</small>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <a href="#" class="btn-custom w-100 text-center">Pilih Paket</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="package-v2">
+                        <div class="img-section" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800');">
+                            <div class="package-count">🎭 Wisata Budaya</div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="fw-bold mb-2">GWK Cultural Park</h3>
+                            <p class="text-muted small mb-3">Patung Garuda Wisnu yang megah</p>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="icon">📍</div>
+                                <small>Ungasan</small>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon">🎫</div>
+                                <small>Tiket</small>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon">📸</div>
+                                <small>Foto</small>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <a href="#" class="btn-custom w-100 text-center">Booking Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESAIN 3 -->
+        <div class="design-section">
+            <div class="text-center">
+                <span class="design-label">DESAIN 3: Card dengan Ribbon & Animated Button</span>
+            </div>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="package-v3">
+                        <div class="ribbon">⭐ TOP</div>
+                        <div class="img-area" style="background-image: url('https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=800');">
+                            <div class="overlay-text">
+                                <h4 class="fw-bold mb-2">Tour Berhari-hari</h4>
+                                <p class="mb-0 small text-muted">10 Paket Pilihan Premium</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-around mb-4 text-center">
+                                <div>
+                                    <div style="font-size: 2rem;">🏖️</div>
+                                    <small>Pantai</small>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem;">⛰️</div>
+                                    <small>Gunung</small>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem;">🛕</div>
+                                    <small>Budaya</small>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem;">🍜</div>
+                                    <small>Kuliner</small>
+                                </div>
+                            </div>
+                            <button class="btn-explore w-100">Eksplor Paket</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="package-v3">
+                        <div class="img-area" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800');">
+                            <div class="overlay-text">
+                                <h4 class="fw-bold mb-2">GWK Cultural Park</h4>
+                                <p class="mb-0 small text-muted">Patung Tertinggi di Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-around mb-4 text-center">
+                                <div>
+                                    <div style="font-size: 2rem;">🗿</div>
+                                    <small>Patung</small>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem;">🎭</div>
+                                    <small>Tari</small>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem;">🌅</div>
+                                    <small>Sunset</small>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem;">🎨</div>
+                                    <small>Seni</small>
+                                </div>
+                            </div>
+                            <button class="btn-explore w-100">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESAIN 4 -->
+        <div class="design-section">
+            <div class="text-center">
+                <span class="design-label">DESAIN 4: Modern Minimalist dengan Accent Border</span>
+            </div>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="package-v4">
+                        <div class="img-container">
+                            <img src="https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=800" alt="Tour">
+                        </div>
+                        <div class="content-area">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold mb-0">Tour Berhari-hari</h3>
+                                <span class="badge bg-danger">⭐ POPULER</span>
+                            </div>
+                            <p class="text-muted">Pilih dari 10 paket wisata terbaik kami</p>
+                            <ul class="feature-list">
+                                <li>✅ Flexible Duration (2-5 hari)</li>
+                                <li>✅ Professional Guide</li>
+                                <li>✅ All-Inclusive Package</li>
+                            </ul>
+                            <a href="#" class="btn-custom w-100 text-center mt-3">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="package-v4">
+                        <div class="img-container">
+                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800" alt="GWK">
+                        </div>
+                        <div class="content-area">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="fw-bold mb-0">GWK Cultural Park</h3>
+                                <span class="badge" style="background: var(--gold-color);">🎭 BUDAYA</span>
+                            </div>
+                            <p class="text-muted">Kunjungi landmark ikonik Bali</p>
+                            <ul class="feature-list">
+                                <li>✅ 121-meter Statue</li>
+                                <li>✅ Cultural Performances</li>
+                                <li>✅ Photo Opportunities</li>
+                            </ul>
+                            <a href="#" class="btn-custom w-100 text-center mt-3">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 p-4 bg-white rounded shadow-sm">
+            <h4 class="mb-3">💡 Tips Memilih Desain:</h4>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <strong>Desain 1</strong>
+                    <p class="small text-muted">Menarik perhatian dengan gradient & icon besar</p>
+                </div>
+                <div class="col-md-3">
+                    <strong>Desain 2</strong>
+                    <p class="small text-muted">Informatif dengan highlight fitur yang jelas</p>
+                </div>
+                <div class="col-md-3">
+                    <strong>Desain 3</strong>
+                    <p class="small text-muted">Modern & playful dengan animasi yang menarik</p>
+                </div>
+                <div class="col-md-3">
+                    <strong>Desain 4</strong>
+                    <p class="small text-muted">Minimalis & elegan untuk kesan profesional</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<section class="stats-section">
+ <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Pencapaian Kami</h2>
+    <div class="row">
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Tahun Berpengalaman</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <div class="stat-number">5000+</div>
+          <div class="stat-label">Pelanggan Puas</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Destinasi Wisata</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Kepuasan Terjamin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Tim Kami</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="team-card">
+          <div class="team-avatar">👨‍💼</div>
+          <div class="team-name">Budi Hartono</div>
+          <div class="team-position">CEO & Founder</div>
+          <p>Berpengalaman 15 tahun di industri pariwisata Indonesia</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="team-card">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">👩‍💼</div>
+          <div class="team-name">Siti Rahmawati</div>
+          <div class="team-position">Operations Manager</div>
+          <p>Ahli dalam manajemen operasional dan customer service</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="team-card">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">👨‍💼</div>
+          <div class="team-name">Ahmad Rizal</div>
+          <div class="team-position">Tour Director</div>
+          <p>Guide profesional dengan sertifikasi internasional</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
